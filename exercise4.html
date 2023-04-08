@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #4: Input check for minimmum number of charecter should be 6 and password match in both input </title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        .err {
+            color: red;
+            font-size: 0.7em;
+        }
+    </style>
+    
+</head>
+<body>
+
+<form name="pw" >
+    <table>
+        <tr>
+            <td>Password (min 6 characters):</td>
+            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password" onfocus="validatePass1()"></td>
+            <td>
+                <div id="pw1_check" class="err"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Repeat password:</td>
+            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"></td>
+            <td>
+                <div id="pw2_check" class="err"></div>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" id="submitBtn"/>
+</form>
+<script>
+    function validatePass1()
+    {   document.getElementById("password1").style.borderColor="blue";
+        // var pass1 = document.getElementById("password1").value;
+        // if (pass1 !== ""&& pass1.length<6) {
+        // document.getElementById("pw1_check").innerHTML="Too Short";
+
+//   }
+    }
+// let p1=document.getElementById("password1");
+// const p1 = document.querySelector('input[name="password1"]');
+
+//   p1.addEventListener('focus', (e) => {
+//             e.target.style.borderColor = 'Blue';
+            // if(x.length>0&&x.length<6)
+            // document.getElementById("pw1_check").innerHTML="Too Short";
+            // return false;
+        // });
+  
+// if(x.toString!==y.toString)
+// document.getElementById("pw2_check").innerHTML="password does not match";
+
+  
+// if(p1.length<6){
+// document.getElementById("pw1_check").innerHTML="Too Short";
+// document.getElementById("submitBtn").style.display="none";
+// }
+// else
+// {   document.getElementById("pw1_check").innerHTML="good password";
+
+//     document.getElementById("submitBtn").style.display="block";
+  
+// }
+</script>
+</body>
+</html>
+

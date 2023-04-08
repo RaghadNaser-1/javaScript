@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {background-color: rgb(130, 209, 81);}
+        #container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto auto auto auto ;
+            width: 400px;
+            height: 450px;
+            background-color: rgb(45, 167, 249);
+            padding: 5px;
+            margin: 5px;
+            margin: auto;
+            margin-top: 100px;
+        }
+        #container #screen {grid-column: 1/span 4;height: 50px;background-color: beige;}
+        #container div {
+            background-color: white;
+            box-shadow: 0 3px 3px 1px gray;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            font-size: 30px;
+            padding-top: 18px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #container .pink {background-color: palevioletred;}
+        #container .yellow {background-color: yellow;}
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="screen"></div>
+        <div id="one">1</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div class="yellow" id="add">+</div>
+        <div id="four">4</div>
+        <div id="five">5</div>
+        <div id="six">6</div>
+        <div class="yellow" id="subtract">-</div>
+        <div id="seven">7</div>
+        <div id="eight">8</div>
+        <div id="nine">9</div>
+        <div class="yellow" id="multiply">*</div>
+        <div class="pink" id="reset">C</div>
+        <div id="zero">0</div>
+        <div id="equal">=</div>
+        <div class="yellow" id="division">/</div>
+    </div>
+    <script>
+        let one=document.getElementById("one");
+        let two=document.getElementById("two");
+        let three=document.getElementById("three");
+        let four=document.getElementById("four");
+        let five=document.getElementById("five");
+        let six=document.getElementById("six");
+        let seven=document.getElementById("seven");
+        let eight=document.getElementById("eight");
+        let nine=document.getElementById("nine");
+        let zero=document.getElementById("zero");
+        let add=document.getElementById("add");
+        let subtract=document.getElementById("subtract");
+        let multiply=document.getElementById("multiply");
+        let division=document.getElementById("division");
+        let reset=document.getElementById("reset");
+        let equal=document.getElementById("equal");
+        let screen=document.getElementById("screen");
+        
+
+        one.addEventListener("click", (e) => {
+            screen.textContent+=1;
+        });
+        two.addEventListener("click", (e) => {
+            screen.textContent+=2;
+        });
+        three.addEventListener("click", (e) => {
+            screen.textContent+=3;
+        });
+        four.addEventListener("click", (e) => {
+            screen.textContent+="4";
+        });
+        five.addEventListener("click", (e) => {
+            screen.textContent+="5";
+        });
+        six.addEventListener("click", (e) => {
+            screen.textContent+="6";
+        });
+        seven.addEventListener("click", (e) => {
+            screen.textContent+="7";
+        });
+        eight.addEventListener("click", (e) => {
+            screen.textContent+="8";
+        });
+        nine.addEventListener("click", (e) => {
+            screen.textContent+="9";
+        });
+        zero.addEventListener("click", (e) => {
+            screen.textContent+="0";
+        });
+        reset.addEventListener("click", (e) => {
+            screen.textContent="";
+        });
+        add.addEventListener("click", (e) => {
+            screen.textContent+="+";
+        });
+        subtract.addEventListener("click", (e) => {
+            screen.textContent+="-";
+        });
+        multiply.addEventListener("click", (e) => {
+            screen.textContent+="*";
+        });
+        division.addEventListener("click", (e) => {
+            screen.textContent+="/";
+        });
+        let sign="",right,left,result;
+
+        equal.addEventListener("click", (e) => {
+            let text=screen.innerText;
+            
+            if(text.includes("+")){
+            sign=text.indexOf("+");
+            right=text.slice(0,sign);
+            left=text.slice(sign+1,text.length);
+         
+            result=parseInt(right)+parseInt(left);
+            }
+            if(text.includes("-")){
+            sign=text.indexOf("-");
+            right=text.slice(0,sign);
+            left=text.slice(sign+1,text.length);
+         
+            result=parseInt(right)-parseInt(left);
+            }
+            if(text.includes("*")){
+            sign=text.indexOf("*");
+            right=text.slice(0,sign);
+            left=text.slice(sign+1,text.length);
+         
+            result=parseInt(right)*parseInt(left);
+            }
+            if(text.includes("/")){
+            sign=text.indexOf("/");
+            right=text.slice(0,sign);
+            left=text.slice(sign+1,text.length);
+         
+            result=parseInt(right)/parseInt(left);
+            }
+            screen.textContent+="="+result;
+        });
+    </script>
+</body>
+</html>

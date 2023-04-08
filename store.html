@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: rgb(234, 233, 233);text-align: center;}
+        .item{background-color: white;padding: 15px;width: 200px;border-radius: 5px;text-align: center;}
+        .info{display: flex;justify-content: space-between;}
+        .add{background-color: rgb(62, 81, 251); color: white;border: none;padding: 5px;border-radius: 5px;}
+        #items{display: flex;justify-content: space-between;width: 750px;margin: auto;}
+        .cartItem{display: flex;justify-content: space-between;width: 500px;margin: 15px;padding: 10px;align-items: center;
+                  border: 1px solid black;border-radius: 5px;}
+        .counter{display: flex;width: 120px;background-color: white;justify-content: space-around;}
+        .number{background-color: black;color: white;padding: 5px;}
+        #cart{display: flex;flex-direction: column;align-items: center;}
+        #total{display: flex; width: 300px;justify-content: space-around;margin: auto;}
+        #save{background-color: rgb(62, 81, 251); color: white;border: none;padding: 5px;border-radius: 5px;width: 100px;font-size: large;}
+        /* #amount{color: rgb(62, 81, 251);} */
+        #cart1{display: none;}
+   </style>
+</head>
+<body>
+   <div id="container">
+    <h1>Store</h1>
+    <div id="items">
+        <div id="item1" class="item">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="200px" height="200px">
+            <div class="info">
+                <p>Item 1</p>
+                <p><b>150JD</b></p>
+            </div>
+            <button id="add1" class="add">add to cart</button>
+        </div>
+        <div id="item2" class="item">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="200px" height="200px">
+            <div class="info">
+                <p>Item 2</p>
+                <p><b>200JD</b></p>
+            </div>
+            <button id="add2" class="add">add to cart</button>
+        </div>
+        
+        <div id="item3" class="item">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="200px" height="200px">
+            <div class="info">
+                <p>Item 3</p>
+                <p><b>250JD</b></p>
+            </div>
+            <button id="add3" class="add">add to cart</button>
+        </div>
+    </div>
+    <div id="cart">
+        <div class="cartItem" id="cart1">
+        <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="75px" height="75px">
+        <p>Item 1</p>
+        <div class="counter">
+            <p id="minus1"><b>-</b></p>
+            <p class="number" id="num1"><b>1</b></p>
+            <p id="plus1"><b>+</b></p>
+        </div>
+        <p><b>150JD</b></p>
+        <img id="del" src="https://static.thenounproject.com/png/6447-200.png" alt="delete" width="50px" height="50px">
+        </div>
+        <div class="cartItem">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="75px" height="75px">
+            <p>Item 2</p>
+            <div class="counter">
+            <p id="minus"><b>-</b></p>
+            <p class="number"><b>1</b></p>
+            <p id="plus"><b>+</b></p>
+            </div>
+            <p><b>200JD</b></p>
+            <img src="https://static.thenounproject.com/png/6447-200.png" alt="delete" width="50px" height="50px">
+            </div>
+            <div class="cartItem">
+                <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="75px" height="75px">
+                <p>Item 3</p>
+                <div class="counter">
+                    <p id="minus"><b>-</b></p>
+                    <p class="number"><b>1</b></p>
+                    <p id="plus"><b>+</b></p>
+                </div>
+                <p><b>250JD</b></p>
+                <img src="https://static.thenounproject.com/png/6447-200.png" alt="delete" width="50px" height="50px">
+            </div>
+            <button id="save">Save</button>
+    </div>
+    <div id="total">
+        <h2>Total</h2>
+        <h2 id="amount">150</h2>
+    </div>
+   </div> 
+   <script>
+    
+   </script>
+</body>
+</html>

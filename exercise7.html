@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #7</title>
+    <style>
+        #container{border: 2px solid black;
+        width: 500px;
+        height: 300px;
+        /* background-image: url();
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat; */
+    }
+        #container img{
+        width: 500px; height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <select id="selectImg">
+        <option value="https://www.shutterstock.com/image-illustration/no-picture-available-placeholder-thumbnail-260nw-2226533855.jpg" >select</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/1200px-Flag_of_Jordan.svg.png" >Jordan</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/280px-Flag_of_Turkey.svg.png" >Türkiye</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Kuwait.svg/1200px-Flag_of_Kuwait.svg.png" >Kuwait</option>
+    </select>
+    <br> <br>
+    <div id="container">
+        <img id="img1" src="https://www.shutterstock.com/image-illustration/no-picture-available-placeholder-thumbnail-260nw-2226533855.jpg" alt="country">
+    </div>
+    <script>
+        let imgSelect=document.getElementById("selectImg");
+        let myImg=document.getElementById("img1");
+        imgSelect.addEventListener('change', function() {
+        const selectedImage = imgSelect.value;
+        
+        myImg.src = selectedImage;
+        });
+        
+    </script>
+</body>
+</html>

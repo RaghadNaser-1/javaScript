@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="my_form">
+        <label for="password1">Password:</label>
+        <input type="password" id="password1" name="password1"><br>
+        <span id="password1_error" style="color: red"></span><br>
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="password2"><br>
+        <span id="password2_error" style="color: red"></span><br>
+        <input type="submit" value="Submit" >
+      </form>
+      <script>
+        const form = document.getElementById("my_form");
+        
+        form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+        const password1 = document.getElementById("password1").value;
+        const password2 = document.getElementById("password2").value;
+        const password1_error = document.getElementById("password1_error");
+        const password2_error = document.getElementById("password2_error"); 
+          var r;
+  if (password1.length < 6) {
+    password1_error.innerHTML = "Password must be at least 6 characters long";
+     r=false;
+  } else if (password1 != password2) {
+    password2_error.innerHTML = "Passwords do not match";
+    r=false;
+  } else {
+    password1_error.innerHTML = "";
+    password2_error.innerHTML = "";
+    r=true;
+    
+  }
+
+     
+     if(r==true)
+     form.submit();
+
+
+});
+
+      </script>
+      
+</body>
+</html>

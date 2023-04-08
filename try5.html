@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text-box{margin-top: 20px; width: 400px;height: 200px;border: 1px solid black;padding: 5px;}
+    </style>
+</head>
+<body>
+    
+      
+      <label for="font-family">Font Family:</label>
+      <select id="font-family">
+        <option value="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+      </select>
+      
+      <label for="font-size">Font Size:</label>
+      <select id="font-size">
+        <option value="12px">12px</option>
+        <option value="14px">14px</option>
+        <option value="16px">16px</option>
+        <option value="18px">18px</option>
+      </select>
+      
+      <label>Font Style:</label>
+      <input type="checkbox" id="bold" /><label for="bold">Bold</label>
+      <input type="checkbox" id="italic" /><label for="italic">Italic</label>
+      <input type="checkbox" id="underline" /><label for="underline">Underline</label>
+      <div id="text-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+      <script>
+        const textBox = document.getElementById("text-box");
+const fontFamilySelect = document.getElementById("font-family");
+const fontSizeSelect = document.getElementById("font-size");
+const boldCheckbox = document.getElementById("bold");
+const italicCheckbox = document.getElementById("italic");
+const underlineCheckbox = document.getElementById("underline");
+
+fontFamilySelect.addEventListener("change", function () {
+  textBox.style.fontFamily = fontFamilySelect.value;
+});
+
+fontSizeSelect.addEventListener("change", function () {
+  textBox.style.fontSize = fontSizeSelect.value;
+});
+
+boldCheckbox.addEventListener("change", function () {
+  if (boldCheckbox.checked) {
+    textBox.style.fontWeight = "bold";
+  } else {
+    textBox.style.fontWeight = "normal";
+  }
+});
+
+italicCheckbox.addEventListener("change", function () {
+  if (italicCheckbox.checked) {
+    textBox.style.fontStyle = "italic";
+  } else {
+    textBox.style.fontStyle = "normal";
+  }
+});
+
+underlineCheckbox.addEventListener("change", function () {
+  if (underlineCheckbox.checked) {
+    textBox.style.textDecoration = "underline";
+  } else {
+    textBox.style.textDecoration = "none";
+  }
+});
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+form {
+  margin: 30px auto;
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  /* font-weight: bold; */
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"],input[type="tel"]{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#error{color: red;}
+h2{text-align: center;}
+
+    </style>
+</head>
+<body>
+  <h2>Sign Up</h2>
+    <form id="myForm">
+      
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" size="30"><br><br>
+      
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" size="30"><br><br>
+
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password" name="password2" size="30"><br><br>
+      
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" size="30"><br><br>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" size="30"><br><br>
+        
+        <label>
+        <input type="checkbox" id="acceptTerms" name="acceptTerms">
+        I accept the terms and conditions 
+        </label> <br> 
+        <button type="submit">Sign Up</button>
+        <p id="error"></p>
+      </form>
+      
+      <script>
+const form = document.getElementById("myForm");
+const error = document.getElementById("error");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  const acceptTerms = document.getElementById("acceptTerms").checked;
+
+  // Validation checks
+  if (username === "" || password === "" || email === "") {
+    error.innerHTML = "Please fill in all fields.";
+  } else if (password.length < 8) {
+    error.innerHTML = "Password must be at least 8 characters long.";
+  } else if (!email.includes("@")) {
+    error.innerHTML = "Please enter a valid email address.";
+  } else if (!acceptTerms) {
+    error.innerHTML = "Please accept the terms and conditions.";
+  } else {
+    form.submit();
+  }
+});
+
+      </script>
+</body>
+</html>

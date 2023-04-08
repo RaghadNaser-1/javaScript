@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  .login-container {
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  
+}
+#login-form{
+    padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+h2{text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Log In</h2>
+
+        <form id="login-form">
+            <div class="form-control">
+
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+          <div class="error-message"></div>
+        </div>
+        <div class="form-control">
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+          <div class="error-message"></div>
+        </div>
+          <button type="submit">Log in</button>
+        </form>
+      </div>
+      <script>
+        const form = document.getElementById('login-form');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent form submission
+
+  const usernameValue = usernameInput.value.trim();
+  const passwordValue = passwordInput.value.trim();
+   var r; 
+  if (usernameValue === '') {
+    setError(usernameInput, 'Username cannot be blank');
+  } else {
+    setSuccess(usernameInput);
+  }
+
+  if (passwordValue === '') {
+    setError(passwordInput, 'Password cannot be blank');
+  } else {
+    setSuccess(passwordInput);
+  }
+});
+
+function setError(input, message) {
+  const formControl = input.parentElement;
+  const errorMessage = formControl.querySelector('.error-message');
+  r=false;
+
+  input.classList.add('error');
+  errorMessage.innerText = message;
+  formControl.classList.add('error');
+}
+
+function setSuccess(input) {
+  const formControl = input.parentElement;
+  const errorMessage = formControl.querySelector('.error-message');
+  r=true;
+
+  input.classList.remove('error');
+  errorMessage.innerText = '';
+  formControl.classList.remove('error');
+}
+if(r==true)
+form.submit();
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text-box{margin-top: 20px; width: 400px;height: 200px;border: 1px solid black;padding: 5px;}
+    </style>
+</head>
+<body>
+    
+      
+      <label for="font-family">Font Family:</label>
+      <select id="font-family">
+        <option value="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+      </select>
+      
+      <label for="font-size">Font Size:</label>
+      <select id="font-size">
+        <option value="12px">12px</option>
+        <option value="14px">14px</option>
+        <option value="16px">16px</option>
+        <option value="18px">18px</option>
+      </select>
+      
+      <label for="font-weight">Font Weight:</label>
+      <select id="font-weight">
+        <option value="normal">Normal</option>
+        <option value="bold">Bold</option>
+        <option value="bolder">Bolder</option>
+        <option value="lighter">Lighter</option>
+      </select>
+      
+      <label for="text-decoration">Text Decoration:</label>
+      <select id="text-decoration">
+        <option value="none">None</option>
+        <option value="underline">Underline</option>
+        <option value="line-through">Line-Through</option>
+      </select>
+      <div id="text-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+      <script>
+        const textBox = document.getElementById("text-box");
+const fontFamilySelect = document.getElementById("font-family");
+const fontSizeSelect = document.getElementById("font-size");
+const fontWeightSelect = document.getElementById("font-weight");
+const textDecorationSelect = document.getElementById("text-decoration");
+
+fontFamilySelect.addEventListener("change", function () {
+  textBox.style.fontFamily = fontFamilySelect.value;
+});
+
+fontSizeSelect.addEventListener("change", function () {
+  textBox.style.fontSize = fontSizeSelect.value;
+});
+
+fontWeightSelect.addEventListener("change", function () {
+  textBox.style.fontWeight = fontWeightSelect.value;
+});
+
+textDecorationSelect.addEventListener("change", function () {
+  textBox.style.textDecoration = textDecorationSelect.value;
+});
+
+      </script>
+        
+</body>
+</html>

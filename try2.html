@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="password1">Password:</label>
+        <input type="password" id="password1" name="password1">
+        <label for="password1" id="pw1" class="error"></label><br><br>
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="password2">
+        <label for="password2" id="pw2" class="error"></label><br><br>
+        <input type="submit" value="Submit" onclick="validatePasswords()">
+      </form>
+      <script>
+        function validatePasswords() {
+  var password1 = document.getElementById("password1").value;
+  var password2 = document.getElementById("password2").value;
+  
+  if (password1.length < 6) {
+    // alert("Password must be at least 6 characters long");
+    document.getElementById("pw1").textContent="Too short";
+    return false;
+  }
+  
+  if (password1 != password2) {
+    // alert("Passwords do not match");
+    document.getElementById("pw2").textContent="Passwords do not match";
+
+    return false;
+  }
+  
+  return false;
+}
+
+      </script>
+</body>
+</html>
