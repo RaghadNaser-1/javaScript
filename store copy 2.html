@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: rgb(234, 233, 233);text-align: center;}
+        .item{background-color: white;padding: 15px;width: 200px;border-radius: 5px;text-align: center;}
+        .info{display: flex;justify-content: space-between;}
+        .add{background-color: rgb(62, 81, 251); color: white;border: none;padding: 5px;border-radius: 5px;cursor: pointer;}
+        #items{display: flex;justify-content: space-between;width: 750px;margin: auto;}
+        .cartItem{display: flex;justify-content: space-between;width: 500px;margin: 15px;padding: 10px;align-items: center;
+                  border: 1px solid black;border-radius: 5px;}
+        .counter{display: flex;width: 120px;background-color: white;justify-content: space-around;align-items: center;}
+        .number{background-color: black;color: white;padding: 5px;}
+        #cart{display: flex;flex-direction: column;align-items: center;}
+        #total{display: flex; width: 300px;justify-content: space-around;margin: auto;}
+        #save{background-color: rgb(62, 81, 251); color: white;border: none;padding: 5px;border-radius: 5px;width: 100px;font-size: large;}
+        /* #amount{color: rgb(62, 81, 251);} */
+        #cart1,#cart2,#cart3,#save,#total{display: none;}
+        #del1,#del2,#del3,#plus1,#minus1,#save,#plus2,#minus2,#plus3,#minus3{cursor: pointer;}
+   </style>
+</head>
+<body>
+   <div id="container">
+    <h1>Store</h1>
+    <div id="items">
+        <div id="item1" class="item">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="200px" height="200px">
+            <div class="info">
+                <p>Item 1</p>
+                <p><b>150JD</b></p>
+            </div>
+            <button id="add1" class="add">add to cart</button>
+        </div>
+        <div id="item2" class="item">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="200px" height="200px">
+            <div class="info">
+                <p>Item 2</p>
+                <p><b>200JD</b></p>
+            </div>
+            <button id="add2" class="add">add to cart</button>
+        </div>
+        
+        <div id="item3" class="item">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="200px" height="200px">
+            <div class="info">
+                <p>Item 3</p>
+                <p><b>250JD</b></p>
+            </div>
+            <button id="add3" class="add">add to cart</button>
+        </div>
+    </div>
+    <div id="cart">
+        <div class="cartItem" id="cart1">
+        <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="75px" height="75px">
+        <p>Item 1</p>
+        <div class="counter">
+            <p id="minus1"><b>-</b></p>
+            <p class="number" id="num1"><b>1</b></p>
+            <p id="plus1"><b>+</b></p>
+        </div>
+        <p><b>150JD</b></p>
+        <img id="del1" src="https://static.thenounproject.com/png/6447-200.png" alt="delete" width="50px" height="50px">
+        </div>
+        <div class="cartItem" id="cart2">
+            <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="75px" height="75px">
+            <p>Item 2</p>
+            <div class="counter">
+            <p id="minus2"><b>-</b></p>
+            <p class="number" id="num2"><b>1</b></p>
+            <p id="plus2"><b>+</b></p>
+            </div>
+            <p><b>200JD</b></p>
+            <img id="del2" src="https://static.thenounproject.com/png/6447-200.png" alt="delete" width="50px" height="50px">
+        </div>
+        <div class="cartItem" id="cart3">
+                <img src="https://www.energysistem.com/cdnassets/products/45303/front_2000.jpg" alt="headphones" width="75px" height="75px">
+                <p>Item 3</p>
+                <div class="counter">
+                    <p id="minus3"><b>-</b></p>
+                    <p class="number" id="num3"><b>1</b></p>
+                    <p id="plus3"><b>+</b></p>
+                </div>
+                <p><b>250JD</b></p>
+                <img id="del3" src="https://static.thenounproject.com/png/6447-200.png" alt="delete" width="50px" height="50px">
+            </div>
+            <button id="save">Save</button>
+    </div>
+    <div id="total">
+        <h2>Total</h2>
+        <h2 id="amount"></h2>
+    </div>
+   </div> 
+   <script>
+    let click1=document.getElementById("add1");
+    let display1=document.getElementById("cart1");
+    let delete1=document.getElementById("del1");
+    let total=document.getElementById("total");
+    let save=document.getElementById("save");
+    let plus1=document.getElementById("plus1");
+    let num1=document.getElementById("num1");
+    let minus1=document.getElementById("minus1");
+    let amount=document.getElementById("amount");
+    let c=0,c2=0,c3=0;
+    // let a = num1.innerText;
+    // let b=parseInt(a);
+    let b=1,b2=1,b3=1;
+    let count=0;
+    let click2=document.getElementById("add2");
+    let display2=document.getElementById("cart2");
+    let delete2=document.getElementById("del2");
+    let plus2=document.getElementById("plus2");
+    let num2=document.getElementById("num2");
+    let minus2=document.getElementById("minus2");
+    let click3=document.getElementById("add3");
+    let display3=document.getElementById("cart3");
+    let delete3=document.getElementById("del3");
+    let plus3=document.getElementById("plus3");
+    let num3=document.getElementById("num3");
+    let minus3=document.getElementById("minus3");
+    
+    click1.addEventListener("click", (e) => {
+        count++;
+        if(count==1){
+        total.style.display="flex";
+        save.style.display="block";}
+        display1.style.display="flex";
+        b=1;
+        c=150;
+        num1.innerHTML= b ;
+        // amount.innerHTML=c;        
+        });
+        
+    plus1.addEventListener("click", (e) => {
+        
+        b++;
+        num1.innerHTML= b ;
+        c=150*b;
+
+        });
+    minus1.addEventListener("click", (e) => {
+        
+        if(b!==1)
+        b--;
+        num1.innerHTML= b ;
+        c=150*b;
+
+        });
+    delete1.addEventListener("click", (e) => {
+        c=0,b=1;
+        display1.style.display="none";
+        count--;
+        if(count==0){
+        total.style.display="none";
+        save.style.display="none";}
+        
+        });      
+    click2.addEventListener("click", (e) => {
+        count++;
+        if(count==1){
+        
+        total.style.display="flex";
+        save.style.display="block";}
+        display2.style.display="flex";
+        b2=1;
+        c2=200;
+        num2.innerHTML= b2 ;
+        // amount.innerHTML=c2;        
+        });
+        
+    plus2.addEventListener("click", (e) => {
+        
+        b2++;
+        num2.innerHTML= b2 ;
+        c2=200*b2;
+
+        });
+    minus2.addEventListener("click", (e) => {
+        
+        if(b2!==1)
+        b2--;
+        num2.innerHTML= b2 ;
+        c2=200*b2;
+
+        });
+    delete2.addEventListener("click", (e) => {
+        c2=0,b2=1;
+        display2.style.display="none";
+
+        count--;
+        if(count==0){
+        total.style.display="none";
+        save.style.display="none";}
+        
+        });
+    click3.addEventListener("click", (e) => {
+        count++;
+        if(count==1){
+        
+        total.style.display="flex";
+        save.style.display="block";}
+        display3.style.display="flex";
+        b3=1;
+        c3=250;
+        num3.innerHTML= b3 ;
+        // amount.innerHTML=c3;        
+        });
+        
+    plus3.addEventListener("click", (e) => {
+        
+        b3++;
+        num3.innerHTML= b3 ;
+        c3=250*b3;
+
+        });
+    minus3.addEventListener("click", (e) => {
+        
+        if(b3!==1)
+        b3--;
+        num3.innerHTML= b3 ;
+        c3=250*b3;
+
+        });
+    delete3.addEventListener("click", (e) => {
+        c3=0,b3=1;
+        display3.style.display="none";
+
+        count--;
+        if(count==0){
+        total.style.display="none";
+        save.style.display="none";}
+        
+        });
+    save.addEventListener("click", (e) => {
+          amount.innerHTML= c+c2+c3;
+        });
+    
+   </script>
+</body>
+</html>
